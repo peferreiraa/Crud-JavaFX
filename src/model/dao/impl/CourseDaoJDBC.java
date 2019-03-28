@@ -1,7 +1,6 @@
 package model.dao.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -86,6 +85,7 @@ public class CourseDaoJDBC implements CourseDao {
 				obj.setDescricao(rs.getString("descricao"));
 				obj.setCargaHoraria(rs.getInt("carga_horaria"));
 				obj.setTotalAulas(rs.getInt("total_de_aulas"));
+				obj.setAno(rs.getDate("ano"));
 				list.add(obj);
 			}
 			return list;

@@ -18,6 +18,7 @@ public class Course implements Serializable {
 		
 	}
 	
+
 	public Course(String nome, String descricao, Integer cargaHoraria, Integer totalAulas) {
 		this.nome = nome;
 		this.descricao = descricao;
