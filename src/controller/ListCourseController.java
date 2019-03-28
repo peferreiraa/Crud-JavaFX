@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import model.dao.CourseDao;
@@ -45,7 +46,15 @@ public class ListCourseController implements Initializable{
     @FXML
     private Button btnDeletar;
     
+    @FXML
+    private Button btnPesquisar;
+
+    @FXML
+    private TextField txtPesquisar;
+    
     private Course selectedCourse;
+    
+    private ObservableList<Course> courses = FXCollections.observableArrayList();
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
@@ -54,6 +63,11 @@ public class ListCourseController implements Initializable{
 		btnDeletar.setOnMouseClicked((MouseEvent e) -> {
 			delete();
 		});
+		
+		btnPesquisar.setOnMouseClicked((MouseEvent e) -> {
+			tblCourse.setItems(searchCourse());
+		});
+		
 		
 		tblCourse.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Course>() {
 
@@ -77,7 +91,8 @@ public class ListCourseController implements Initializable{
 	
 	public ObservableList<Course> updateTable(){
 		CourseDao dao = DaoFactory.createCourseDao();
-		return FXCollections.observableArrayList(dao.findAll());
+		courses = FXCollections.observableArrayList(dao.findAll());
+		return courses;
 	}
 	
 	public void delete() {
@@ -89,5 +104,16 @@ public class ListCourseController implements Initializable{
 		else {
 			System.out.println("Error!");
 		}
+	}
+	
+	public ObservableList<Course> searchCourse(){
+		ObservableList<Course> courseSearch = FXCollections.observableArrayList();
+		for(Course course : courses) {
+			if(course.getNome().toLowerCase().contains(txtPesquisar.getText().toLowerCase()) || 
+					course.getId().toString().contains(txtPesquisar.getText())) {
+				courseSearch.add(course);
+			}
+		}
+		return courseSearch;
 	}
 }

@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="472.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListCourseController">
@@ -23,5 +24,7 @@
          </content>
       </ScrollPane>
       <Button fx:id="btnDeletar" layoutX="14.0" layoutY="170.0" mnemonicParsing="false" text="Deletar" />
+      <Button fx:id="btnPesquisar" layoutX="718.0" layoutY="70.0" mnemonicParsing="false" text="Pesquisar" />
+      <TextField fx:id="txtPesquisar" layoutX="553.0" layoutY="70.0" />
    </children>
 </AnchorPane>
