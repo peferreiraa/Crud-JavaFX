@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import application.UpdateCourse;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -16,6 +17,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import model.dao.CourseDao;
 import model.dao.DaoFactory;
 import model.entities.Course;
@@ -52,6 +54,9 @@ public class ListCourseController implements Initializable{
     @FXML
     private TextField txtPesquisar;
     
+    @FXML
+    private Button btnUpdateCurso;
+    
     private Course selectedCourse;
     
     private ObservableList<Course> courses = FXCollections.observableArrayList();
@@ -68,6 +73,15 @@ public class ListCourseController implements Initializable{
 			tblCourse.setItems(searchCourse());
 		});
 		
+		btnUpdateCurso.setOnMouseClicked((MouseEvent e) -> {
+			if(selectedCourse != null) {
+				UpdateCourse update = new UpdateCourse(selectedCourse);
+				update.start(new Stage());
+			}
+			else {
+				System.out.println("Error!");
+			}
+		});
 		
 		tblCourse.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Course>() {
 

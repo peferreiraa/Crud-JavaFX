@@ -42,12 +42,12 @@ public class CourseDaoJDBC implements CourseDao {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement(
-					"UPDATE cursos SET nome = ?,  descricao = ?, carga_horaria = ?, total_de_aulas = ?, ano = ? ");
+					"UPDATE cursos SET nome = ?,  descricao = ?, carga_horaria = ?, total_de_aulas = ? WHERE id = ?");
 			st.setString(1, obj.getNome());
 			st.setString(2, obj.getDescricao());
 			st.setInt(3, obj.getCargaHoraria());
 			st.setInt(4, obj.getTotalAulas());
-			st.setDate(5, new java.sql.Date(obj.getAno().getTime()));
+			st.setInt(5, obj.getId());
 			st.executeUpdate();
 		}
 		catch(SQLException e) {
