@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="472.0" prefWidth="834.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="controller.ListCourseController">
+   <children>
+      <ScrollPane layoutY="247.0" prefHeight="225.0" prefWidth="834.0">
+         <content>
+            <TableView fx:id="tblCourse" prefHeight="226.0" prefWidth="834.0">
+              <columns>
+                <TableColumn fx:id="columnId" prefWidth="79.0" text="Id" />
+                <TableColumn fx:id="columnNome" prefWidth="147.0" text="Nome" />
+                  <TableColumn fx:id="columnDescricao" prefWidth="181.0" text="Descrição" />
+                  <TableColumn fx:id="columnCargaHoraria" prefWidth="143.0" text="Carga horária" />
+                  <TableColumn fx:id="columnTotalAulas" prefWidth="147.0" text="Total de aulas" />
+                  <TableColumn fx:id="columnAno" prefWidth="136.0" text="Ano" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
