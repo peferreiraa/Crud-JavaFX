@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 import model.dao.CourseDao;
 import model.dao.DaoFactory;
 import model.entities.Course;
+import util.Alerts;
+import util.Constraints;
 
 public class RegisterCourseController implements Initializable {
 
@@ -37,6 +39,8 @@ public class RegisterCourseController implements Initializable {
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
+		constraints();
+		
 		btnCadastrar.setOnMouseClicked((MouseEvent e) -> {
 			register();
 			closeRegister();
@@ -48,6 +52,8 @@ public class RegisterCourseController implements Initializable {
 			closeRegister();
 			openMain();
 		});
+		
+		
 	}
 	
 	public void register() {
@@ -67,5 +73,12 @@ public class RegisterCourseController implements Initializable {
 	public void openMain() {
 		MainView main = new MainView();
 		main.start(new Stage());
+	}
+	
+	public void constraints() {
+		Constraints.setTexFieldMaxLength(txtNome, 20);
+		Constraints.setTexFieldMaxLength(txtDescricao, 20);
+		Constraints.setTexFieldInteger(txtTotalAulas);
+		Constraints.setTexFieldInteger(txtCargaHoraria);
 	}
 }

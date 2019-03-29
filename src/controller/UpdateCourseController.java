@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import model.dao.CourseDao;
 import model.dao.DaoFactory;
 import model.entities.Course;
+import util.Constraints;
 
 public class UpdateCourseController implements Initializable {
 
@@ -43,8 +44,9 @@ public class UpdateCourseController implements Initializable {
 	private Button btnCancelar;
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL url, ResourceBundle rb) {
 		initCourse();
+		constraints();
 		
 		btnAtualizar.setOnMouseClicked((MouseEvent e) -> {
 			updateCourse();
@@ -88,5 +90,12 @@ public class UpdateCourseController implements Initializable {
 	
 	public void closeUpdate() {
 		UpdateCourse.getStageUpdateCourse().close();
+	}
+	
+	public void constraints() {
+		Constraints.setTexFieldMaxLength(txtNome, 20);
+		Constraints.setTexFieldMaxLength(txtDescricao, 20);
+		Constraints.setTexFieldInteger(txtTotalAulas);
+		Constraints.setTexFieldInteger(txtCargaHoraria);
 	}
 }

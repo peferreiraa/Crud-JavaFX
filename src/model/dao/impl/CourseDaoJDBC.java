@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import db.DbException;
+import javafx.scene.control.Alert.AlertType;
 import model.dao.CourseDao;
 import model.entities.Course;
+import util.Alerts;
 
 public class CourseDaoJDBC implements CourseDao {
 	
@@ -33,7 +35,7 @@ public class CourseDaoJDBC implements CourseDao {
 			st.executeUpdate();
 		}
 		catch(SQLException e) {
-			throw new DbException(e.getMessage());
+			Alerts.showAlert("Error", "Erro ao cadastrar curso", e.getMessage(), AlertType.ERROR);
 		}
 	}
 
@@ -51,7 +53,7 @@ public class CourseDaoJDBC implements CourseDao {
 			st.executeUpdate();
 		}
 		catch(SQLException e) {
-			throw new DbException(e.getMessage());
+			Alerts.showAlert("Error", "Erro ao atualizar curso", e.getMessage(), AlertType.ERROR);
 		}
 		
 	}
@@ -65,7 +67,7 @@ public class CourseDaoJDBC implements CourseDao {
 			st.executeUpdate();
 		}
 		catch(SQLException e) {
-			throw new DbException(e.getMessage());
+			Alerts.showAlert("Error", "Erro ao deletar", e.getMessage(), AlertType.ERROR);
 		}
 		
 	}

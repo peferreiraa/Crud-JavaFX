@@ -1,7 +1,9 @@
 package controller;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import application.UpdateCourse;
@@ -12,15 +14,18 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.dao.CourseDao;
 import model.dao.DaoFactory;
 import model.entities.Course;
+import util.Alerts;
 
 public class ListCourseController implements Initializable{
 
@@ -70,7 +75,7 @@ public class ListCourseController implements Initializable{
 		});
 		
 		btnDeletar.setOnMouseClicked((MouseEvent e) -> {
-			delete();
+			delete();	
 		});
 		
 		btnPesquisar.setOnMouseClicked((MouseEvent e) -> {
@@ -83,7 +88,7 @@ public class ListCourseController implements Initializable{
 				update.start(new Stage());
 			}
 			else {
-				System.out.println("Error!");
+				Alerts.showAlert("Error", "Selecione um curso", null, AlertType.ERROR);
 			}
 		});
 		
@@ -117,9 +122,8 @@ public class ListCourseController implements Initializable{
 			CourseDao dao = DaoFactory.createCourseDao();
 			dao.delete(selectedCourse.getId());
 			tblCourse.setItems(updateTable());
-		}
-		else {
-			System.out.println("Error!");
+		}else {
+			Alerts.showAlert("Error", "Selecione um curso", null, AlertType.ERROR);
 		}
 	}
 	
