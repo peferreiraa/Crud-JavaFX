@@ -13,12 +13,11 @@
          <content>
             <TableView fx:id="tblCourse" prefHeight="226.0" prefWidth="834.0">
               <columns>
-                <TableColumn fx:id="columnId" prefWidth="79.0" text="Id" />
-                <TableColumn fx:id="columnNome" prefWidth="147.0" text="Nome" />
-                  <TableColumn fx:id="columnDescricao" prefWidth="181.0" text="Descrição" />
-                  <TableColumn fx:id="columnCargaHoraria" prefWidth="143.0" text="Carga horária" />
-                  <TableColumn fx:id="columnTotalAulas" prefWidth="147.0" text="Total de aulas" />
-                  <TableColumn fx:id="columnAno" prefWidth="136.0" text="Ano" />
+                <TableColumn fx:id="columnId" prefWidth="122.0" text="Id" />
+                <TableColumn fx:id="columnNome" prefWidth="161.0" text="Nome" />
+                  <TableColumn fx:id="columnDescricao" prefWidth="175.0" text="Descrição" />
+                  <TableColumn fx:id="columnCargaHoraria" prefWidth="169.0" text="Carga horária" />
+                  <TableColumn fx:id="columnTotalAulas" prefWidth="195.0" text="Total de aulas" />
               </columns>
             </TableView>
          </content>
@@ -26,6 +25,7 @@
       <Button fx:id="btnDeletar" layoutX="14.0" layoutY="170.0" mnemonicParsing="false" text="Deletar" />
       <Button fx:id="btnPesquisar" layoutX="718.0" layoutY="70.0" mnemonicParsing="false" text="Pesquisar" />
       <TextField fx:id="txtPesquisar" layoutX="553.0" layoutY="70.0" />
-      <Button fx:id="btnUpdateCurso" layoutX="131.0" layoutY="170.0" mnemonicParsing="false" text="Atualizar Curso" />
+      <Button fx:id="btnUpdateCurso" layoutX="131.0" layoutY="170.0" mnemonicParsing="false" text="Alterar Curso" />
+      <Button fx:id="btnAtualizarTabela" layoutX="276.0" layoutY="170.0" mnemonicParsing="false" text="Atualizar Tabela" />
    </children>
 </AnchorPane>

@@ -17,12 +17,11 @@ public class MainViewController implements Initializable {
     @FXML
     private Button btnCadastrar;
     
-
     @FXML
     private Button btnListarCursos;
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL url, ResourceBundle rb) {
 		btnCadastrar.setOnMouseClicked((MouseEvent e) -> {
 			closeMain();
 			openRegister();

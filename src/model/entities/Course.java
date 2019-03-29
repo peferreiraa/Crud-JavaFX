@@ -12,13 +12,11 @@ public class Course implements Serializable {
 	private String descricao;
 	private Integer cargaHoraria;
 	private Integer totalAulas;
-	private Date ano;
 	
 	public Course() {
 		
 	}
 	
-
 	public Course(String nome, String descricao, Integer cargaHoraria, Integer totalAulas) {
 		this.nome = nome;
 		this.descricao = descricao;
@@ -77,14 +75,6 @@ public class Course implements Serializable {
 	}
 
 
-	public Date getAno() {
-		return ano;
-	}
-
-
-	public void setAno(Date ano) {
-		this.ano = ano;
-	}
 	
 	
 	public String toString() {
@@ -92,8 +82,7 @@ public class Course implements Serializable {
 				+"\nNome: + " + nome
 				+"\nDescrição: " + descricao
 				+"\nCarga horária: " + cargaHoraria
-				+"\nTotal de aulas: " + totalAulas
-				+"\nAno: " + ano;
+				+"\nTotal de aulas: " + totalAulas;
 	}
 	
 }

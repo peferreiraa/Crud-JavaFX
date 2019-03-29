@@ -42,9 +42,6 @@ public class ListCourseController implements Initializable{
 	@FXML
 	private TableColumn<Course, Integer> columnTotalAulas;
 
-	@FXML
-	private TableColumn<Course, Date> columnAno;
-
     @FXML
     private Button btnDeletar;
     
@@ -57,6 +54,9 @@ public class ListCourseController implements Initializable{
     @FXML
     private Button btnUpdateCurso;
     
+    @FXML
+    private Button btnAtualizarTabela;
+    
     private Course selectedCourse;
     
     private ObservableList<Course> courses = FXCollections.observableArrayList();
@@ -64,6 +64,10 @@ public class ListCourseController implements Initializable{
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		initTable();
+		
+		btnAtualizarTabela.setOnMouseClicked((MouseEvent e) -> {
+			tblCourse.setItems(updateTable());
+		});
 		
 		btnDeletar.setOnMouseClicked((MouseEvent e) -> {
 			delete();
@@ -99,7 +103,6 @@ public class ListCourseController implements Initializable{
 		columnDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
 		columnCargaHoraria.setCellValueFactory(new PropertyValueFactory<>("cargaHoraria"));
 		columnTotalAulas.setCellValueFactory(new PropertyValueFactory<>("totalAulas"));
-		columnAno.setCellValueFactory(new PropertyValueFactory<>("ano"));
 		tblCourse.setItems(updateTable());
 	}
 	

@@ -53,7 +53,8 @@
             <TextField fx:id="txtId" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Button fx:id="btnCadastrar" layoutX="282.0" layoutY="319.0" mnemonicParsing="false" text="Cadastrar" />
-      <Button fx:id="btnCancelar" layoutX="436.0" layoutY="319.0" mnemonicParsing="false" text="Cancelar" />
+      <Button fx:id="btnAtualizar" layoutX="214.0" layoutY="321.0" mnemonicParsing="false" text="Atualizar" />
+      <Button fx:id="btnCancelar" layoutX="368.0" layoutY="321.0" mnemonicParsing="false" text="Cancelar" />
+     
    </children>
 </AnchorPane>

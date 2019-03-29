@@ -37,7 +37,7 @@ public class UpdateCourseController implements Initializable {
 	private TextField txtId;
 
 	@FXML
-	private Button btnCadastrar;
+	private Button btnAtualizar;
 
 	@FXML
 	private Button btnCancelar;
@@ -46,7 +46,7 @@ public class UpdateCourseController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		initCourse();
 		
-		btnCadastrar.setOnMouseClicked((MouseEvent e) -> {
+		btnAtualizar.setOnMouseClicked((MouseEvent e) -> {
 			updateCourse();
 		});
 		
