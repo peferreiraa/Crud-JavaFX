@@ -6,9 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model.entities.Course;
 
-public class UpdateCourse  extends Application{
+public class UpdateCourse  extends Application {
 	
 	private static Stage stageUpdateCourse;
 	
@@ -22,10 +23,12 @@ public class UpdateCourse  extends Application{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/UpdateCourse.fxml"));
 			Parent parent = loader.load();
 			Scene scene = new Scene(parent);
+			stage.initStyle(StageStyle.UNDECORATED);
 			stage.setTitle("Login");
 			stage.setScene(scene);
 			stage.show();
 			setStageUpdateCourse(stage);
+			parent.getStylesheets().addAll("/css/UpdateCourse.css");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

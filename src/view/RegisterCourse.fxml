@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="435.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterCourseController">
+<AnchorPane prefHeight="435.0" prefWidth="643.0" styleClass="achorpane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterCourseController">
    <children>
       <GridPane layoutX="163.0" layoutY="125.0" prefHeight="155.0" prefWidth="335.0">
         <columnConstraints>
@@ -47,5 +47,7 @@
       </GridPane>
        <Button fx:id="btnCadastrar" layoutX="282.0" layoutY="319.0" mnemonicParsing="false" text="Cadastrar" />
       <Button fx:id="btnCancelar" layoutX="436.0" layoutY="319.0" mnemonicParsing="false" text="Cancelar" />
+      <Label fx:id="lblClose" layoutX="600.0" layoutY="3.0" prefHeight="30.0" prefWidth="30.0" styleClass="close" AnchorPane.topAnchor="5.0" />
+      <Label fx:id="lblMinimize" layoutX="576.0" layoutY="1.0" prefHeight="26.0" prefWidth="24.0" styleClass="minimize" AnchorPane.topAnchor="5.0" />
    </children>
 </AnchorPane>

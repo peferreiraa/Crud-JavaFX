@@ -3,19 +3,19 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.MainView;
+
 import application.RegisterCourse;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import model.dao.CourseDao;
 import model.dao.DaoFactory;
 import model.entities.Course;
-import util.Alerts;
 import util.Constraints;
+import util.OpenMainView;
 
 public class RegisterCourseController implements Initializable {
 
@@ -30,6 +30,12 @@ public class RegisterCourseController implements Initializable {
 
 	@FXML
 	private TextField txtTotalAulas;
+	
+    @FXML
+    private Label lblClose;
+
+    @FXML
+    private Label lblMinimize;
 
 	@FXML
 	private Button btnCadastrar;
@@ -41,16 +47,24 @@ public class RegisterCourseController implements Initializable {
 	public void initialize(URL url, ResourceBundle rb) {
 		constraints();
 		
+		lblMinimize.setOnMouseClicked((MouseEvent e) -> {
+			RegisterCourse.getStageRegisterCourse().setIconified(true);
+		});
+		
+		lblClose.setOnMouseClicked((MouseEvent e) -> {
+			closeRegister();
+		});
+		
 		btnCadastrar.setOnMouseClicked((MouseEvent e) -> {
 			register();
 			closeRegister();
-			openMain();
+			OpenMainView.openMainView();
 			
 		});
 		
 		btnCancelar.setOnMouseClicked((MouseEvent e) -> {
 			closeRegister();
-			openMain();
+			OpenMainView.openMainView();
 		});
 		
 		
@@ -68,11 +82,6 @@ public class RegisterCourseController implements Initializable {
 	
 	public void closeRegister() {
 		RegisterCourse.getStageRegisterCourse().close();
-	}
-	
-	public void openMain() {
-		MainView main = new MainView();
-		main.start(new Stage());
 	}
 	
 	public void constraints() {

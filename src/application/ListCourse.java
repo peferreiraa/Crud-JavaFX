@@ -2,13 +2,15 @@ package application;
 
 
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
-public class ListCourse extends Application{
+public class ListCourse extends Application {
 	
 	private static Stage stageListCourse;
 	
@@ -18,10 +20,12 @@ public class ListCourse extends Application{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ListCourse.fxml"));
 			Parent parent = loader.load();
 			Scene scene = new Scene(parent);
+			stage.initStyle(StageStyle.UNDECORATED);
 			stage.setTitle("Login");
 			stage.setScene(scene);
 			stage.show();
 			setStageListCourse(stage);
+			parent.getStylesheets().addAll("/css/ListCourse.css");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

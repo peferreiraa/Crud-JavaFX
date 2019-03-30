@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+<AnchorPane prefHeight="400.0" prefWidth="623.0" styleClass="achorpane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
    <children>
-      <Button fx:id="btnCadastrar" layoutX="159.0" layoutY="92.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="164.0" text="Cadastrar Curso" />
-      <Button fx:id="btnListarCursos" layoutX="424.0" layoutY="92.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="164.0" text="Listar Cursos" />
+      <Button fx:id="btnCadastrar" layoutX="120.0" layoutY="197.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="164.0" text="Cadastrar Curso" AnchorPane.leftAnchor="120.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnListarCursos" layoutX="339.0" layoutY="197.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="164.0" text="Listar Cursos" AnchorPane.rightAnchor="120.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="260.0" layoutY="66.0" prefHeight="96.0" prefWidth="103.0" styleClass="img" />
+      <Label fx:id="lblClose" layoutX="581.0" layoutY="14.0" prefHeight="26.0" prefWidth="28.0" styleClass="close" />
+      <Label fx:id="lblMinimize" layoutX="544.0" layoutY="14.0" prefHeight="26.0" prefWidth="23.0" styleClass="minimize" />
    </children>
 </AnchorPane>

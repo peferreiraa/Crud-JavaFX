@@ -1,11 +1,10 @@
 package controller;
 
 import java.net.URL;
-import java.sql.SQLException;
-import java.util.Date;
-import java.util.Optional;
+
 import java.util.ResourceBundle;
 
+import application.ListCourse;
 import application.UpdateCourse;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -14,7 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -26,6 +25,7 @@ import model.dao.CourseDao;
 import model.dao.DaoFactory;
 import model.entities.Course;
 import util.Alerts;
+import util.OpenMainView;
 
 public class ListCourseController implements Initializable{
 
@@ -57,6 +57,12 @@ public class ListCourseController implements Initializable{
     private TextField txtPesquisar;
     
     @FXML
+    private Label lblClose;
+
+    @FXML
+    private Label lblMinimize;
+
+    @FXML
     private Button btnUpdateCurso;
     
     @FXML
@@ -69,6 +75,15 @@ public class ListCourseController implements Initializable{
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		initTable();
+		
+		lblClose.setOnMouseClicked((MouseEvent e) -> {
+			closeListCourse();
+			OpenMainView.openMainView();
+		});
+		
+		lblMinimize.setOnMouseClicked((MouseEvent e) -> {
+			ListCourse.getStageListCourse().setIconified(true);
+		});
 		
 		btnAtualizarTabela.setOnMouseClicked((MouseEvent e) -> {
 			tblCourse.setItems(updateTable());
@@ -86,9 +101,10 @@ public class ListCourseController implements Initializable{
 			if(selectedCourse != null) {
 				UpdateCourse update = new UpdateCourse(selectedCourse);
 				update.start(new Stage());
+				closeListCourse();
 			}
 			else {
-				Alerts.showAlert("Error", "Selecione um curso", null, AlertType.ERROR);
+				Alerts.showAlert("Error", "Selecione um curso!", null, AlertType.ERROR);
 			}
 		});
 		
@@ -123,7 +139,7 @@ public class ListCourseController implements Initializable{
 			dao.delete(selectedCourse.getId());
 			tblCourse.setItems(updateTable());
 		}else {
-			Alerts.showAlert("Error", "Selecione um curso", null, AlertType.ERROR);
+			Alerts.showAlert("Error", "Selecione um curso!", null, AlertType.ERROR);
 		}
 	}
 	
@@ -137,4 +153,9 @@ public class ListCourseController implements Initializable{
 		}
 		return courseSearch;
 	}
+	
+	public void closeListCourse() {
+		ListCourse.getStageListCourse().close();
+	}
+	
 }

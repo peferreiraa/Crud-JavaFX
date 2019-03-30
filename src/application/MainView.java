@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MainView extends Application {
 	
@@ -17,10 +18,12 @@ public class MainView extends Application {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
 			Parent parent = loader.load();
 			Scene scene = new Scene(parent);
+			stage.initStyle(StageStyle.UNDECORATED);
 			stage.setTitle("Main View");
 			stage.setScene(scene);
 			stage.show();
 			setStageMainView(stage);
+			parent.getStylesheets().addAll("/css/MainView.css");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

@@ -1,0 +1,27 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.achorpane{
+	-fx-font-family: "Arial";
+	-fx-background-image: url("/img/softambience.jpg");	
+	
+}
+
+.text-field{
+	-fx-background-radius: 20px;
+}
+
+.label.img{
+	-fx-background-image: url("/img/icons8_edit_property_100px.png");
+}
+
+.button{
+	-fx-background-color: linear-gradient(#9EA7E5, #61a2b1);
+}
+
+.label.close{
+	-fx-background-image: url("/img/icons8_multiply_26px.png"); 
+}
+
+.label.minimize{
+	-fx-background-image: url("/img/icons8_minimize_window_24px.png"); 
+}

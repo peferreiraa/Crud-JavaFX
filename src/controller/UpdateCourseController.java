@@ -1,15 +1,17 @@
 package controller;
 
 import java.net.URL;
-import java.util.Date;
 import java.util.ResourceBundle;
 
+import application.ListCourse;
 import application.UpdateCourse;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import model.dao.CourseDao;
 import model.dao.DaoFactory;
 import model.entities.Course;
@@ -36,6 +38,12 @@ public class UpdateCourseController implements Initializable {
 
 	@FXML
 	private TextField txtId;
+	
+    @FXML
+    private Label lblClose;
+
+    @FXML
+    private Label lblMinimize;
 
 	@FXML
 	private Button btnAtualizar;
@@ -48,12 +56,21 @@ public class UpdateCourseController implements Initializable {
 		initCourse();
 		constraints();
 		
+		lblMinimize.setOnMouseClicked((MouseEvent e) -> {
+			UpdateCourse.getStageUpdateCourse().setIconified(true);
+		});
+		
+		lblClose.setOnMouseClicked((MouseEvent e) -> {
+			closeUpdate();
+		});
+		
 		btnAtualizar.setOnMouseClicked((MouseEvent e) -> {
 			updateCourse();
 		});
 		
 		btnCancelar.setOnMouseClicked((MouseEvent e) -> {
 			closeUpdate();
+			openListCourse();
 		});
 	}
 
@@ -97,5 +114,10 @@ public class UpdateCourseController implements Initializable {
 		Constraints.setTexFieldMaxLength(txtDescricao, 20);
 		Constraints.setTexFieldInteger(txtTotalAulas);
 		Constraints.setTexFieldInteger(txtCargaHoraria);
+	}
+	
+	public void openListCourse() {
+		ListCourse lc = new ListCourse();
+		lc.start(new Stage());
 	}
 }

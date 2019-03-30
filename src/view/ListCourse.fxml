@@ -1,31 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListCourseController">
+<AnchorPane prefHeight="472.0" prefWidth="751.0" styleClass="achorpane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListCourseController">
    <children>
-      <ScrollPane layoutY="247.0" prefHeight="225.0" prefWidth="834.0">
+      <ScrollPane layoutX="-3.0" layoutY="247.0" prefHeight="225.0" prefWidth="758.0">
          <content>
-            <TableView fx:id="tblCourse" prefHeight="226.0" prefWidth="834.0">
+            <TableView fx:id="tblCourse" prefHeight="226.0" prefWidth="745.0">
               <columns>
-                <TableColumn fx:id="columnId" prefWidth="122.0" text="Id" />
-                <TableColumn fx:id="columnNome" prefWidth="161.0" text="Nome" />
-                  <TableColumn fx:id="columnDescricao" prefWidth="175.0" text="Descrição" />
-                  <TableColumn fx:id="columnCargaHoraria" prefWidth="169.0" text="Carga horária" />
-                  <TableColumn fx:id="columnTotalAulas" prefWidth="195.0" text="Total de aulas" />
+                <TableColumn fx:id="columnId" prefWidth="107.0" text="Id" />
+                <TableColumn fx:id="columnNome" prefWidth="176.0" text="Nome" />
+                  <TableColumn fx:id="columnDescricao" prefWidth="253.0" text="Descrição" />
+                  <TableColumn fx:id="columnCargaHoraria" minWidth="0.0" prefWidth="104.0" text="Carga horária" />
+                  <TableColumn fx:id="columnTotalAulas" minWidth="0.0" prefWidth="106.0" text="Total de aulas" />
               </columns>
             </TableView>
          </content>
       </ScrollPane>
-      <Button fx:id="btnDeletar" layoutX="14.0" layoutY="170.0" mnemonicParsing="false" text="Deletar" />
-      <Button fx:id="btnPesquisar" layoutX="718.0" layoutY="70.0" mnemonicParsing="false" text="Pesquisar" />
-      <TextField fx:id="txtPesquisar" layoutX="553.0" layoutY="70.0" />
-      <Button fx:id="btnUpdateCurso" layoutX="131.0" layoutY="170.0" mnemonicParsing="false" text="Alterar Curso" />
-      <Button fx:id="btnAtualizarTabela" layoutX="276.0" layoutY="170.0" mnemonicParsing="false" text="Atualizar Tabela" />
+      <Button fx:id="btnDeletar" layoutX="298.0" layoutY="151.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="129.0" text="Deletar">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnPesquisar" layoutX="446.0" layoutY="151.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="129.0" text="Pesquisar">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <TextField fx:id="txtPesquisar" layoutX="582.0" layoutY="155.0" prefWidth="150.0" />
+      <Button fx:id="btnUpdateCurso" layoutX="153.0" layoutY="151.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="129.0" text="Alterar Curso">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnAtualizarTabela" layoutX="11.0" layoutY="151.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="129.0" text="Atualizar Tabela">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="311.0" layoutY="26.0" prefHeight="96.0" prefWidth="103.0" styleClass="img" />
+      <Label fx:id="lblClose" layoutX="713.0" layoutY="6.0" prefHeight="23.0" prefWidth="30.0" styleClass="close" />
+      <Label fx:id="lblMinimize" layoutX="674.0" layoutY="6.0" prefHeight="23.0" prefWidth="24.0" styleClass="minimize" />
    </children>
 </AnchorPane>

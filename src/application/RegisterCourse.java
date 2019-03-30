@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class RegisterCourse extends Application {
 	
@@ -17,10 +18,12 @@ public class RegisterCourse extends Application {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/RegisterCourse.fxml"));
 			Parent parent = loader.load();
 			Scene scene = new Scene(parent);
+			stage.initStyle(StageStyle.UNDECORATED);
 			stage.setTitle("Register");
 			stage.setScene(scene);
 			stage.show();
 			setStageRegisterCourse(stage);
+			parent.getStylesheets().addAll("/css/RegisterCourse.css");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
