@@ -8,10 +8,11 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="435.0" prefWidth="643.0" styleClass="achorpane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterCourseController">
    <children>
-      <GridPane layoutX="163.0" layoutY="125.0" prefHeight="155.0" prefWidth="335.0">
+      <GridPane layoutX="134.0" layoutY="125.0" prefHeight="155.0" prefWidth="364.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="83.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="215.0" />
@@ -26,19 +27,31 @@
             <Label text="Nome">
                <GridPane.margin>
                   <Insets left="10.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font></Label>
             <Label text="Descricao" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font></Label>
             <Label text="Carga horária" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="10.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font></Label>
             <Label text="Total de aulas" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="10.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font></Label>
             <TextField fx:id="txtNome" GridPane.columnIndex="1" />
             <TextField fx:id="txtDescricao" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtCargaHoraria" GridPane.columnIndex="1" GridPane.rowIndex="2" />
