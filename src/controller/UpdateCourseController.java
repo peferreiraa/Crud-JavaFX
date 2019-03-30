@@ -66,6 +66,7 @@ public class UpdateCourseController implements Initializable {
 		
 		btnAtualizar.setOnMouseClicked((MouseEvent e) -> {
 			updateCourse();
+			openListCourse();
 		});
 		
 		btnCancelar.setOnMouseClicked((MouseEvent e) -> {
